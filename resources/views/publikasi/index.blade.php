@@ -6,7 +6,7 @@
     <title>Daftar Publikasi BPS Provinsi Sumatera Utara</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
 <nav class="navbar navbar-dark mb-4" style="background:#1a5c8a;">
     <div class="container">
@@ -17,7 +17,7 @@
     </div>
 </nav>
 
-<div class="container">
+<main class="container flex-grow-1 pb-4">
 
     <h1 class="h4 fw-bold mb-3">Daftar Publikasi</h1>
 
@@ -27,7 +27,7 @@
 
     <a href="/publikasi/create" class="btn btn-primary mb-3">+ Tambah Publikasi</a>
 
-    <table class="table table-bordered table-hover align-middle bg-white">
+    <table class="table table-bordered table-hover align-middle bg-white mb-4">
         <thead style="background-color: #1a5c8a; color: white;">
             <tr>
                 <th>No</th>
@@ -70,11 +70,11 @@
         </tbody>
     </table>
 
-    <footer class="text-center text-muted small border-top py-3 mt-4">
+    <footer class="text-center text-muted small border-top py-3 mt-auto">
         <address class="mb-1">Copyright 2026 Politeknik Statistika STIS</address>
         <address class="mb-0">Created by Desi Natalia Magdalena Naibaho (222413542@stis.ac.id)</address>
     </footer>
-</div>
+</main>
 
 </body>
 </html>
