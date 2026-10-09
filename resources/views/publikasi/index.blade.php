@@ -17,7 +17,7 @@
     </div>
 </nav>
 
-<main class="container flex-grow-1 pb-4">
+<main class="container flex-grow-1 pb-4 d-flex flex-column">
 
     <h1 class="h4 fw-bold mb-3">Daftar Publikasi</h1>
 
@@ -25,7 +25,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <a href="/publikasi/create" class="btn btn-primary mb-3">+ Tambah Publikasi</a>
+    <a href="/publikasi/create" class="btn btn-primary mb-3 align-self-start">+ Tambah Publikasi</a>
 
     <table class="table table-bordered table-hover align-middle bg-white mb-4">
         <thead style="background-color: #1a5c8a; color: white;">
