@@ -24,8 +24,10 @@ class PublikasiController extends Controller
         $data = $request->validate([
             'judul'         => 'required|string|max:255',
             'tanggal_rilis' => 'required|date',
-            'sampul'        => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'sampul'        => 'nullable|image|mimes:jpg,jpeg,png|max:5120',
             'deskripsi'     => 'nullable|string',
+        ], [
+            'sampul.max' => 'Ukuran file sampul maksimal 5MB. File lebih dari 5MB tidak diterima.',
         ]);
 
         if ($request->hasFile('sampul')) {
@@ -50,8 +52,10 @@ class PublikasiController extends Controller
         $data = $request->validate([
             'judul'         => 'required|string|max:255',
             'tanggal_rilis' => 'required|date',
-            'sampul'        => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'sampul'        => 'nullable|image|mimes:jpg,jpeg,png|max:5120',
             'deskripsi'     => 'nullable|string',
+        ], [
+            'sampul.max' => 'Ukuran file sampul maksimal 5MB. File lebih dari 5MB tidak diterima.',
         ]);
 
         if ($request->hasFile('sampul')) {

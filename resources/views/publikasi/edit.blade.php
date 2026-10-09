@@ -43,9 +43,10 @@
             @else
                 <span class="text-muted">Tidak ada gambar</span>
             @endif
-            <input type="file" name="sampul"
+                 <input type="file" name="sampul" id="sampul"
+                     accept=".jpg,.jpeg,.png,image/jpeg,image/png"
                    class="form-control @error('sampul') is-invalid @enderror">
-            <div class="form-text">Kosongkan jika tidak ingin mengganti sampul.</div>
+                 <div class="form-text">Kosongkan jika tidak ingin mengganti sampul. Maksimal ukuran file 5MB.</div>
             @error('sampul') <div class="invalid-feedback">{{ $message }}</div> @enderror
         </div>
 
@@ -60,6 +61,39 @@
         </div>
     </form>
 </div>
+
+<script>
+    (function () {
+        const maxSize = 5 * 1024 * 1024;
+        const input = document.getElementById('sampul');
+
+        if (!input) {
+            return;
+        }
+
+        input.addEventListener('change', function () {
+            const file = this.files && this.files[0];
+
+            if (!file) {
+                this.setCustomValidity('');
+                this.classList.remove('is-invalid');
+                return;
+            }
+
+            if (file.size > maxSize) {
+                this.value = '';
+                this.setCustomValidity('Ukuran file sampul maksimal 5MB.');
+                this.classList.add('is-invalid');
+                alert('Ukuran file melebihi 5MB. Silakan pilih file lain.');
+                this.reportValidity();
+                return;
+            }
+
+            this.setCustomValidity('');
+            this.classList.remove('is-invalid');
+        });
+    })();
+</script>
 
 </body>
 </html>
